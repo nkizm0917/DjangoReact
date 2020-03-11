@@ -2,9 +2,9 @@ __pycache__
 
 code/django_rest_api/test_app/test_app/settings.py
 
-node_modules
+# node_modules
 
-package.json
-package-lock.json
-README.md
-yarn.lock
+# package.json
+# package-lock.json
+# README.md
+# yarn.lock
