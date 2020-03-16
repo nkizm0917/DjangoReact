@@ -6,8 +6,7 @@ node_modules
 
 package.json
 package-lock.json
-# README.md
 yarn.lock
 yarn.lock.rej
 
-docker-copose.yml
+docker-compose.yml
