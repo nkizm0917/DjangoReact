@@ -7,6 +7,8 @@ import App from './App';
 import App2 from "./page/app2";
 import Geinin from "./page/geinin";
 import Geinin_res from "./page/geinin_res";
+import testApp from './page/testapp';
+
 
 import history from './history';
 
@@ -17,10 +19,11 @@ const Root: React.FC = () => {
   return (
     <Router history={history}>
       <Switch>
-        <Route exact path="/" component={Top} />
+        <Route exact path="/" component={App} />
+        <Route exact path="/top" component={Top} />
         <Route exact path="/sample" component={Sample} />
         <Route exact path="/sample2" component={Sample2} />
-        <Route exact path="/app" component={App} />
+        <Route exact path="/app" component={testApp} />
         <Route exact path="/app2" component={App2} />
         <Route exact path="/geinin" component={Geinin} />
         <Route exact path="/geinin/results" component={Geinin_res} />

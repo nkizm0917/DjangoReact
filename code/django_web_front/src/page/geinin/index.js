@@ -1,6 +1,7 @@
 import React from 'react';
 import history from '../../history';
 import Select from 'react-select';
+import './index.css';
 // import './App.css';
 // import { useHistory, useLocation } from "react-router-dom";
 // import Select from 'react-select';
@@ -57,25 +58,35 @@ class Geinin extends React.Component {
 
     render() {
         return (
+            
             <div>
 
-                <form onSubmit={this.handleSubmit}>
-                    <label>
-                        <p className="is-size-4">好きな芸人を選択:&nbsp;</p>
-                        <Select
-                            onChange={this.handleChange}
-                            options={options}
-                        />
+                <main>
+                    <div className="hero is-info is-bold">
+                        <div className="hero-body " id="hero_b">
+                            <a className="title" href="/geinin/">芸人レコメンダー</a>
+                        </div>
+                    </div>
+                    <div className="container" id="root"></div>
+                </main>
 
-                    </label>
-
-                    <input className="button is-primary is-large" type='submit' value="おすすめを見る" />
-
-                </form>
-
-
+                <section className="section" id="section_form">
+                    <form onSubmit={this.handleSubmit}>
+                        <div id="wrap">
+                            <label>
+                                <p className="is-size-4">好きな芸人を選択:&nbsp;</p>
+                                <Select
+                                    onChange={this.handleChange}
+                                    options={options}
+                                />
+                            </label>
+                            <input className="button is-primary is-large" id="button_submit" type='submit' value="おすすめを見る" />
+                        </div>
+                    </form>
+                </section>
 
             </div>
+
         );
     }
 };

@@ -74,8 +74,21 @@ class Geinin_res extends Component {
         };
     }
 
-    componentDidMount() {
-        axios.get('http://192.168.99.100:8000/api/geinin/' + this.state.value +'/?format=json')
+    // componentDidMount() {
+    //     // axios.get('http://192.168.99.100:8000/api/geinin/' + this.state.value +'/?format=json')
+    //     axios.get('http://54.168.139.121:8000/api/geinin/' + this.state.value +'/?format=json')
+    //         .then(response => {
+    //             this.setState({
+    //                 results: response.data,
+    //             });
+    //         })
+    //         .catch((error) => {
+    //             console.log(error);
+    //         });
+    // }
+    async componentDidMount() {
+        // axios.get('http://192.168.99.100:8000/api/geinin/' + this.state.value +'/?format=json')
+        await axios.get('http://54.168.139.121:8000/api/geinin/' + this.state.value +'/?format=json')
             .then(response => {
                 this.setState({
                     results: response.data,
