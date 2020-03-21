@@ -11,3 +11,23 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+/* ↓追加 */
+
+#hero_b {
+  padding: 1.5rem;
+}
+
+#section_15rem {
+  padding: 1.5rem;
+}
+
+#button_submit {
+  margin: 1.5rem auto;
+  display: block;
+}
+
+#wrap {
+  width: 100%;
+}

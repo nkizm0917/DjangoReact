@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import img_1 from './media/rank_first.png'
-import img_2 from './media/rank_second.png'
-import img_3 from './media/rank_third.png'
+import img_1 from './media/rank_first.png';
+import img_2 from './media/rank_second.png';
+import img_3 from './media/rank_third.png';
+import Header_geinin from '../../template/header_geinin';
 
 
 class List extends React.Component {
@@ -102,9 +103,14 @@ class Geinin_res extends Component {
     render() {
         return (
             <div>
-                <List
-                    results={this.state.results}
-                />
+                <Header_geinin />
+
+                <section className="section" id="section_15rem">
+                    <List
+                        results={this.state.results}
+                    />
+                </section>
+            
             </div>
             // <div className="columns is-multiline">
             //     <div className="column is-12" id="user-table">
