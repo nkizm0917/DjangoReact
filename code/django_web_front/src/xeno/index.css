@@ -1,4 +1,4 @@
-html, body, #root, main {
+html, body, #root, main, .cover {
   font: 14px "Century Gothic", Futura, sans-serif;
   margin: 12px;
   height: 100%;

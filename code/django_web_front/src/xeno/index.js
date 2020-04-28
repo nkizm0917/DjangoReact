@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import { Helmet } from 'react-helmet';
 // import 'bulma/css/bulma.min.css';
 // import handSample from './handSample.png';
 import card1 from './img/card/card1.png';
@@ -515,11 +516,15 @@ class Game extends React.Component {
         // const openCom =this.state.openCom
         // const taking = this.state.taking
 
+        
         if (step === 0) {
             return (
-                <GameStart
-                    gameStartClick={() => this.gameStartClick()}
-                />
+                <div className="cover">
+                    <Helmet title="Xeno" />
+                    <GameStart
+                        gameStartClick={() => this.gameStartClick()}
+                    />
+                </div>
             );
         } else {
             return (
