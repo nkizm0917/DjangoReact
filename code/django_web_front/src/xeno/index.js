@@ -520,9 +520,7 @@ class Game extends React.Component {
         if (step === 0) {
             return (
                 <div className="cover">
-                    <Helmet>
-                        <title>Xeno</title>
-                    </Helmet>
+                    <Helmet title="Xeno" />
                     <GameStart
                         gameStartClick={() => this.gameStartClick()}
                     />

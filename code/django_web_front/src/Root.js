@@ -30,7 +30,7 @@ const Root: React.FC = () => {
         <Route exact path="/geinin" component={Geinin} />
         <Route exact path="/geinin/results" component={Geinin_res} />
         <Route exact path="/contents" component={Contents} />
-        <Route exact path="/xeno" component={Game} />
+        <Route exact path="/game/xeno" component={Game} />
         <Route component={NotFound} />
       </Switch>
     </Router>
