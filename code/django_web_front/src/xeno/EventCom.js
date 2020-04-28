@@ -15,11 +15,12 @@ export class EventCom extends React.Component {
 
     twoRandom(deck, hand, trans) {
         const handPlayer = hand[0][0]
-        deck.push(handPlayer)
+        var remain = Array.from(deck)
+        remain.push(handPlayer)
         if (trans != null) {
-            deck.push(trans)
+            remain.push(trans)
         }
-        const option = deck[Math.floor(Math.random() * deck.length)]
+        const option = remain[Math.floor(Math.random() * remain.length)]
         return option;
     }
 
@@ -27,7 +28,7 @@ export class EventCom extends React.Component {
         const event = this.props.event
         const hand = this.props.hand
         const deck = this.props.deck
-        const trans = this.props.trans        
+        const trans = this.props.trans
         // console.log(event)
         if (event) {
             if (event === 6) {
