@@ -64,6 +64,8 @@ export class Event extends React.Component {
                         {this.renderEffectTwo(i, "3")}
                         {this.renderEffectTwo(i, "4")}
                         {this.renderEffectTwo(i, "5")}
+                    </div>
+                    <div>
                         {this.renderEffectTwo(i, "6")}
                         {this.renderEffectTwo(i, "7")}
                         {this.renderEffectTwo(i, "8")}
