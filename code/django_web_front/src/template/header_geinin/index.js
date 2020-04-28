@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
+import { Helmet } from 'react-helmet';
 // import '../../styles/index.css';
 
 
 class Header_geinin extends React.Component {
     render() {
         return (
-
             <div>
+                <Helmet title="芸人レコメンダー" />
 
                 <main>
                     <div className="hero is-info is-bold">

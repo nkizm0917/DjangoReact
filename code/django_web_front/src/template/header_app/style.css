@@ -1,0 +1,26 @@
+#menubar {
+	text-align: center;		/*文字をセンタリング*/
+	font-size: 28px;		/*文字サイズ*/
+	margin-bottom: 40px;	/*下に空けるスペース*/
+}
+/*メニュー１個あたりの設定*/
+#menubar li {
+    display: inline;	/*横並びにする設定*/
+    padding: 15px 30px 15px 0px;	/*各メニュー内の余白。上下に15px、左右に30pxあけるという意味。*/
+
+}
+#menubar li a {
+	text-decoration: none;
+}
+/*マウスオン時の設定*/
+#menubar li a:hover {
+	color: #224acf;	/*文字色*/
+}
+
+
+.lebel {
+	width: 100%;
+}
+.level-item {
+	padding: 1.5rem 0;
+}

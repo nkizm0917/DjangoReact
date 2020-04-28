@@ -1,6 +1,7 @@
 import React from 'react';
 import history from '../../history';
 import Select from 'react-select';
+import Header_geinin from '../../template/header_geinin';
 // import styles from './index.module.css'
 // import './App.css';
 // import { useHistory, useLocation } from "react-router-dom";
@@ -92,15 +93,7 @@ class Geinin extends React.Component {
         return (
             
             <div>
-
-                <main>
-                    <div className="hero is-info is-bold">
-                        <div className="hero-body " id="hero_b">
-                            <a className="title" href="/geinin/">芸人レコメンダー</a>
-                        </div>
-                    </div>
-                    <div className="container" id="root"></div>
-                </main>
+                <Header_geinin />
 
                 <section className="section" id="section_15rem">
                 {/* <section className={styles.section_6rem}> */}

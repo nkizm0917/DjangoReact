@@ -1,0 +1,101 @@
+html, body, #root, main {
+  font: 14px "Century Gothic", Futura, sans-serif;
+  margin: 12px;
+  height: 100%;
+  /* width: 100%; */
+  /* height: 450px; */
+}
+
+/* .game {
+  display: flex;
+  flex-direction: row;
+} */
+
+.start {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+.start img {
+  margin: 30px 0;
+  cursor: pointer;
+}
+.start a {
+  margin: 30px 0;
+  font-size: large;
+}
+
+
+.board {
+  text-align: center;
+}
+
+
+.hand {
+  height: 120px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+}
+
+.handimg  {
+  height: 100px;
+  width: 75px;
+  margin: 5px;
+}
+
+
+.field {
+  height: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  flex-direction: row;
+  align-items: center;  
+}
+
+.cardField {
+  height: 40px;
+  width: 30px;
+  border: solid;
+  /* text-align: center;
+  vertical-align: middle; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.center {
+  height: 150px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+}
+
+h3 {
+  margin: 0.5rem;
+}
+
+p {
+  margin: 0.5rem;
+}
+
+.board button {
+  margin: 1rem 0.2rem;
+}
+
+
+.link {
+  color: blue;
+  text-decoration:underline;
+  text-align: right;
+  cursor: pointer;
+}
