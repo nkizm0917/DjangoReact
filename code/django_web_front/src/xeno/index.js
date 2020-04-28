@@ -813,7 +813,7 @@ export function Field(props) {
 
 export function EffectTwo(props) {
     return (
-        <button onClick={props.onClick}>
+        <button onClick={props.onClick} id="buttonTwo">
             {props.value}
         </button>
     );
@@ -871,10 +871,12 @@ export function EffectNine(props) {
 
 // ============================================================
 
-ReactDOM.render(
-    <Game />,
-    document.getElementById('root')
-);
+// ReactDOM.render(
+//     <Game />,
+//     document.getElementById('root')
+// );
+
+export default Game;
 
 // function calculateWinner(squares) {
 //     const lines = [

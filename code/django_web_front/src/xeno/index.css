@@ -1,4 +1,4 @@
-html, body, #root {
+html, body, #root, main {
   font: 14px "Century Gothic", Futura, sans-serif;
   margin: 12px;
   height: 100%;
@@ -90,6 +90,10 @@ p {
 
 .board button {
   /* size: 1.5rem; */
+  margin: 1rem 0.2rem;
+}
+
+#buttonTwo {
   margin: 0.2rem;
 }
 
