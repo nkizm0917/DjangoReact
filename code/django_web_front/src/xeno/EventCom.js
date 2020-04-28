@@ -14,7 +14,7 @@ export class EventCom extends React.Component {
     // }
 
     twoRandom(deck, hand, trans) {
-        const handPlayer = hand[0][1]
+        const handPlayer = hand[0][0]
         deck.push(handPlayer)
         if (trans != null) {
             deck.push(trans)
