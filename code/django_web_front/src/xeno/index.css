@@ -45,10 +45,12 @@ html, body, main, #root {
 .cover {
   padding: 12px;
   height: 100%;
+  width: 100%;
   display: flex;
   text-align: center;
   align-items: center;
   background: radial-gradient(#00e180, #008049);
+  box-sizing: border-box;
 }
 
 .board {
@@ -72,6 +74,7 @@ html, body, main, #root {
 }
 .effectimg {
   width: 80px;
+  height: auto;
   cursor: pointer;
 }
 .effect {
