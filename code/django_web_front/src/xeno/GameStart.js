@@ -3,6 +3,8 @@ import React from 'react';
 
 import start from './img/other/start.png';
 
+import title from './img/other/title.png';
+
 export class GameStart extends React.Component {
     // renderGameStart() {
     //     return (<GameStart onClick={() => this.props.gameStartClick()} />);
@@ -14,6 +16,7 @@ export class GameStart extends React.Component {
                 {/* <button onClick={() => this.props.gameStartClick()}>
                     ゲームスタート
                 </button> */}
+                <img src={title} id="title"/>
                 <img src={start} onClick={() => this.props.gameStartClick()}/>
                 {/* <img src={start} onClick={() => this.props.gameStartClick()}/> */}
                 <a href="https://www.happybrainwash.com/xeno" target="_blank" rel="noopener noreferrer">遊び方</a>

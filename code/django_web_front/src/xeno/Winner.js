@@ -24,7 +24,7 @@ export class Winner extends React.Component {
             }
         }
         return (
-            <div>
+            <div className="winner">
                 {/* <div>
                     {status}
                 </div> */}

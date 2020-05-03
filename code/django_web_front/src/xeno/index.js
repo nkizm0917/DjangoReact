@@ -528,39 +528,41 @@ class Game extends React.Component {
             );
         } else {
             return (
-                <div>
-                    <Board
-                        deck={deck}
-                        step={step}
-                        // gameStartClick={() => this.gameStartClick()}
-                        drawClick={i => this.drawClick(i)}
-                        hand={hand}
-                        playcardClick={(i, j) => this.playcardClick(i, j)}
-                        field={field}
-                        trans={trans}
-                        winner={winner}
-                        status={status}
-                        last={last}
-                        event={event}
-                        player={player}
-                        wise={wise}
-                        // openCom={openCom}
-                        effectOneClick={(i, j) => this.effectOneClick(i, j)}
-                        effectTwoClick={(i, option) => this.effectTwoClick(i, option)}
-                        effectThreeClick={(i, j) => this.effectThreeClick(i, j)}
-                        effectFiveClick={(i, j) => this.effectFiveClick(i, j)}
-                        effectSixClick={() => this.effectSixClick()}
-                        effectSevenClick={(i, option) => this.effectSevenClick(i, option)}
-                        effectNineClick={(i, j) => this.effectNineClick(i, j)}
-                        next={() => this.next()}
-                        drawClick={(i) => this.drawClick(i)}
-                        playcardCom={() => this.playcardCom()}
-                        playcardClick={(i, j) => this.playcardClick(i, j)}
-                        // statusCom={(status) => this.statusCom(status)}
-                        reset={(i) => this.reset(i)}
-                        confirm={() => this.confirm()}
-                        resetG={() => this.resetG()}
-                    />
+                <div className="cover">
+                    <div className="board">
+                        <Board
+                            deck={deck}
+                            step={step}
+                            // gameStartClick={() => this.gameStartClick()}
+                            drawClick={i => this.drawClick(i)}
+                            hand={hand}
+                            playcardClick={(i, j) => this.playcardClick(i, j)}
+                            field={field}
+                            trans={trans}
+                            winner={winner}
+                            status={status}
+                            last={last}
+                            event={event}
+                            player={player}
+                            wise={wise}
+                            // openCom={openCom}
+                            effectOneClick={(i, j) => this.effectOneClick(i, j)}
+                            effectTwoClick={(i, option) => this.effectTwoClick(i, option)}
+                            effectThreeClick={(i, j) => this.effectThreeClick(i, j)}
+                            effectFiveClick={(i, j) => this.effectFiveClick(i, j)}
+                            effectSixClick={() => this.effectSixClick()}
+                            effectSevenClick={(i, option) => this.effectSevenClick(i, option)}
+                            effectNineClick={(i, j) => this.effectNineClick(i, j)}
+                            next={() => this.next()}
+                            drawClick={(i) => this.drawClick(i)}
+                            playcardCom={() => this.playcardCom()}
+                            playcardClick={(i, j) => this.playcardClick(i, j)}
+                            // statusCom={(status) => this.statusCom(status)}
+                            reset={(i) => this.reset(i)}
+                            confirm={() => this.confirm()}
+                            resetG={() => this.resetG()}
+                        />
+                    </div>
                 </div>
             );
         }

@@ -1,8 +1,9 @@
 import React from 'react';
-import { Draw, PlayerHand, ComHand, Field } from './index';
+import { Draw, PlayerHand, ComHand, Field, EffectFive } from './index';
 
 import deck1 from './img/deck/deck1.png';
 import deck2 from './img/deck/deck2.png';
+import effect from './img/other/effect.png';
 
 import { Last } from './Last';
 import { Player } from './Player';
@@ -12,9 +13,10 @@ import { EventCom } from './EventCom';
 import { StatusCom } from './StatusCom';
 import { HandComEvent } from './HandComEvent';
 import { Status } from './Status';
-import { ResultCom } from './ResultCom';
+// import { ResultCom } from './ResultCom';
 import { Winner } from './Winner';
 import { Wise } from './Wise';
+import { Effect } from './Effect';
 
 
 export class Board extends React.Component {
@@ -24,6 +26,7 @@ export class Board extends React.Component {
             statusCom: null,
             optionCom: null,
             openCom: false,
+            effect: false,
         };
     }
 
@@ -107,6 +110,26 @@ export class Board extends React.Component {
         }
     }
 
+    effect() {
+        this.setState({
+            effect: !this.state.effect,
+        })
+    }
+    renderEffectButton() {
+        return (
+            <div className="effectButton">
+                <img src={effect} className="effectimg" onClick={() => this.effect()}/>
+            </div>
+        );
+    }
+    renderEffect() {
+        return(
+            <div className="effect">
+                <Effect />
+            </div>
+        );
+    }
+
     statusCom(playcard) {
         this.setState({
             statusCom: playcard,
@@ -163,6 +186,7 @@ export class Board extends React.Component {
         const winner = this.props.winner
         const status = this.props.status
         const stepNum = (this.props.step - 1) % 2
+        const last = this.props.last
         const statusCom = this.state.statusCom
         const optionCom = this.state.optionCom
         if (statusCom === null && status != null) { //status
@@ -184,23 +208,33 @@ export class Board extends React.Component {
                     />
                 </div>
             );
+        } else if (event===null && statusCom === null && last) {
+            return (
+                <div className="center">
+                    <Last
+                        effect={() => this.props.effectSixClick()}
+                    />
+                </div>
+            );
         } else if (stepNum === 0) { //COM出す～Player出す
             if (this.props.event) {
                 return(
                     <div className="center">
-                        <EventCom
-                            deck={deck}
-                            hand={hand}
-                            event={event}
-                            effectOneClick={(i, j) => this.props.effectOneClick(i, j)}
-                            effectTwoClick={(i, option) => this.props.effectTwoClick(i, option)}
-                            effectFiveClick={(i, j) => this.props.effectFiveClick(i, j)}
-                            effectSixClick={() => this.props.effectSixClick()}
-                            effectNineClick={(i, j) => this.props.effectNineClick(i, j)}
-                            statusCom={(playcard) => this.statusCom(playcard)}
-                            optionCom={(option) => this.optionCom(option)}
-                            next={() => this.props.next()}
-                        />
+                        <div className="event">
+                            <EventCom
+                                deck={deck}
+                                hand={hand}
+                                event={event}
+                                effectOneClick={(i, j) => this.props.effectOneClick(i, j)}
+                                effectTwoClick={(i, option) => this.props.effectTwoClick(i, option)}
+                                effectFiveClick={(i, j) => this.props.effectFiveClick(i, j)}
+                                effectSixClick={() => this.props.effectSixClick()}
+                                effectNineClick={(i, j) => this.props.effectNineClick(i, j)}
+                                statusCom={(playcard) => this.statusCom(playcard)}
+                                optionCom={(option) => this.optionCom(option)}
+                                next={() => this.props.next()}
+                            />
+                        </div>
                     </div>
                 );
             } else if (this.state.statusCom) {
@@ -210,14 +244,6 @@ export class Board extends React.Component {
                             statusCom={statusCom}
                             optionCom={optionCom}
                             confirmCom={() => this.confirmCom()}
-                        />
-                    </div>
-                );
-            } else if (this.props.last) {
-                return(
-                    <div className="center">
-                        <Last
-                            effect={() => this.props.effectSixClick()}
                         />
                     </div>
                 );
@@ -252,30 +278,24 @@ export class Board extends React.Component {
             if (this.props.event) {
                 return(
                     <div className="center">
-                        <Event
-                            deck={deck}
-                            player={player}
-                            hand={hand}
-                            event={event}
-                            effectOneClick={(i, j) => this.props.effectOneClick(i, j)}
-                            effectTwoClick={(i, option) => this.props.effectTwoClick(i, option)}
-                            effectThreeClick={(i, j) => this.props.effectThreeClick(i, j)}
-                            effectFiveClick={(i, j) => this.props.effectFiveClick(i, j)}
-                            effectSixClick={() => this.props.effectSixClick()}
-                            effectSevenClick={(i, option) => this.props.effectSevenClick(i, option)}
-                            effectNineClick={(i, j) => this.props.effectNineClick(i, j)}
-                            next={() => this.props.next()}
-                            openCom={(boolean) => this.openCom(boolean)}
-                        />
+                        <div className="event">
+                            <Event
+                                deck={deck}
+                                player={player}
+                                hand={hand}
+                                event={event}
+                                effectOneClick={(i, j) => this.props.effectOneClick(i, j)}
+                                effectTwoClick={(i, option) => this.props.effectTwoClick(i, option)}
+                                effectThreeClick={(i, j) => this.props.effectThreeClick(i, j)}
+                                effectFiveClick={(i, j) => this.props.effectFiveClick(i, j)}
+                                effectSixClick={() => this.props.effectSixClick()}
+                                effectSevenClick={(i, option) => this.props.effectSevenClick(i, option)}
+                                effectNineClick={(i, j) => this.props.effectNineClick(i, j)}
+                                next={() => this.props.next()}
+                                openCom={(boolean) => this.openCom(boolean)}
+                            />
+                        </div>
                     </div>                    
-                );
-            } else if (this.props.last) {
-                return (
-                    <div className="center">
-                        <Last
-                            effect={() => this.props.effectSixClick()}
-                        />
-                    </div>
                 );
             } else {
                 return (
@@ -309,27 +329,45 @@ export class Board extends React.Component {
             return (<div>
                 {this.renderGameStart()}
             </div>);
-        }
-        return (
-            <div>
+        } else if (this.state.effect) {
+            return (
                 <div>
-                    <p onClick={() => this.resetAll()} className="link">
-                        はじめから
-                    </p>
-                </div>
-                <div className="board">
-                    {this.renderCom()}
-                    
-                    {this.renderCenter()}
+                    <div>
+                        <p onClick={() => this.resetAll()} className="link">
+                            はじめから
+                        </p>
+                    </div>
+                    <div className="boardIn">
+                        {this.renderEffect()}
 
-                    {/* <div>
+                    </div>
+                        {this.renderEffectButton()}
+                </div>
+            );
+        } else {
+            return (
+                <div>
+                    <div>
+                        <p onClick={() => this.resetAll()} className="link">
+                            はじめから
+                        </p>
+                    </div>
+                    <div className="boardIn">
+                        {this.renderCom()}
+
+                        {this.renderCenter()}
+
+                        {/* <div>
                         {this.renderDraw(0)}
                     </div> */}
 
-                    {this.renderPlayer()}
+                        {this.renderPlayer()}
+
+                    </div>
+                        {this.renderEffectButton()}
                 </div>
-            </div>
-        );
+            );
+        }
     }
 }
 
