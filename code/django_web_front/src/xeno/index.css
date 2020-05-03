@@ -74,7 +74,7 @@ html, body, main, #root {
 }
 .effectimg {
   width: 80px;
-  height: auto;
+  height: 53px;
   cursor: pointer;
 }
 .effect {
