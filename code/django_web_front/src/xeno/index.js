@@ -820,7 +820,7 @@ export function Field(props) {
 
 export function EffectTwo(props) {
     return (
-        <button onClick={props.onClick} id="buttonTwo">
+        <button type="button" onClick={props.onClick} id="buttonTwo">
             {props.value}
         </button>
     );

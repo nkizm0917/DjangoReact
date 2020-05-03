@@ -192,10 +192,12 @@ export class Board extends React.Component {
         if (statusCom === null && status != null) { //status
             return (
                 <div className="center">
-                    <Status
-                        status={status}
-                        confirm={() => this.props.confirm()}
-                    />
+                    <div className="event">
+                        <Status
+                            status={status}
+                            confirm={() => this.props.confirm()}
+                        />
+                    </div>
                 </div>
             );
         } else if (statusCom === null && winner != null) { //winner
@@ -211,9 +213,11 @@ export class Board extends React.Component {
         } else if (event===null && statusCom === null && last) {
             return (
                 <div className="center">
-                    <Last
-                        effect={() => this.props.effectSixClick()}
-                    />
+                    <div className="event">
+                        <Last
+                            effect={() => this.props.effectSixClick()}
+                        />
+                    </div>
                 </div>
             );
         } else if (stepNum === 0) { //COM出す～Player出す
@@ -240,23 +244,27 @@ export class Board extends React.Component {
             } else if (this.state.statusCom) {
                 return(
                     <div className="center">
-                        <StatusCom
-                            statusCom={statusCom}
-                            optionCom={optionCom}
-                            confirmCom={() => this.confirmCom()}
-                        />
+                        <div className="event">
+                            <StatusCom
+                                statusCom={statusCom}
+                                optionCom={optionCom}
+                                confirmCom={() => this.confirmCom()}
+                            />
+                        </div>
                     </div>
                 );
             } else if (this.props.wise[0] && this.props.deck.length >= 3) {
                 return (
                     <div className="center">
-                        <Wise 
-                            deck={deck}
-                            player={player}
-                            stepNum={stepNum}
-                            effectSevenClick={(i, option) => this.props.effectSevenClick(i, option)}
-                            reset={(i) => this.props.reset(i)}
-                        />
+                        <div className="event">
+                            <Wise 
+                                deck={deck}
+                                player={player}
+                                stepNum={stepNum}
+                                effectSevenClick={(i, option) => this.props.effectSevenClick(i, option)}
+                                reset={(i) => this.props.reset(i)}
+                            />
+                        </div>
                     </div>
                 );
             } else {
