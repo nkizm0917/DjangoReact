@@ -471,11 +471,11 @@ class Game extends React.Component {
             this.setState ({
                 step: stepNow + 1,
             })
-            if (this.state.deck.length === 0) {
-                this.setState({
-                    last: true,
-                })
-            }
+            // if (this.state.deck.length === 0) {
+            //     this.setState({
+            //         last: true,
+            //     })
+            // }
         }
         return;
     }

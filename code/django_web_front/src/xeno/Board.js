@@ -3,6 +3,7 @@ import { Draw, PlayerHand, ComHand, Field, EffectFive } from './index';
 
 import deck1 from './img/deck/deck1.png';
 import deck2 from './img/deck/deck2.png';
+import deckT from './img/deck/deckT.png';
 import effect from './img/other/effect.png';
 
 import { Last } from './Last';
@@ -160,18 +161,32 @@ export class Board extends React.Component {
     }
 
     renderDeck() {
-        if (this.props.trans) {
-            return (
-                <div className="deckimg">
-                    <img src={deck2}/>
-                </div>
-            );
+        const trans = this.props.trans
+        const remain = this.props.deck.length
+        if (trans) {
+            if (remain != 0) {
+                return (
+                    <div className="deckimg">
+                        <img src={deck2} />
+                    </div>
+                );
+            } else {
+                return(
+                    <div className="deckimg">
+                        <img src={deckT} />
+                    </div>
+                );
+            }
         } else {
-            return (
-                <div className="deckimg">
-                    <img src={deck1} />
-                </div>
-            );
+            if (remain != 0) {
+                return (
+                    <div className="deckimg">
+                        <img src={deck1} />
+                    </div>
+                );
+            } else {
+                return(<div></div>);
+            }
         }
     }
 
@@ -210,7 +225,7 @@ export class Board extends React.Component {
                     />
                 </div>
             );
-        } else if (event===null && statusCom === null && last) {
+        } else if (event === null && !statusCom && !hand[0][1] && !hand[1][1] && deck.length===0) {
             return (
                 <div className="center">
                     <div className="event">
