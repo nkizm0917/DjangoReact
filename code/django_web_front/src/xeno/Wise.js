@@ -14,7 +14,7 @@ export class Wise extends React.Component {
         const i = this.props.stepNum;
         return (
             <div>
-                <h3>⑦選択</h3>
+                <h3>⑦賢者</h3>
                 <p>手札に加えるカードを選択</p>
                 <div>
                     {this.renderEffectSeven(i, 0)}

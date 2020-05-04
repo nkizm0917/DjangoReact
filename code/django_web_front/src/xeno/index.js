@@ -851,7 +851,7 @@ export function EffectFive(props) {
 export function EffectSix(props) {
     return (
         <div>
-            <h3>⑥対決</h3>
+            <h3>⑥貴族</h3>
             <p>数字の大きい方が勝利</p>
             <button onClick={props.onClick}>
                 対決する

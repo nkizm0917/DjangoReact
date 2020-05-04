@@ -16,7 +16,7 @@ export class StatusCom extends React.Component {
             case 1: {
                 return (
                     <div>
-                        <h3>①革命</h3>
+                        <h3>①少年</h3>
                         <p>「{option}」が選択されました</p>
                     </div>
                 );
@@ -24,7 +24,7 @@ export class StatusCom extends React.Component {
             case 2: {
                 return (
                     <div>
-                        <h3>②捜査</h3>
+                        <h3>②兵士</h3>
                         <p>「{option}」が選択されました</p>
                     </div>
                 );
@@ -32,7 +32,7 @@ export class StatusCom extends React.Component {
             case 5: {
                 return (
                     <div>
-                        <h3>⑤疫病</h3>
+                        <h3>⑤死神</h3>
                         <p>「{option}」が選択されました</p>
                     </div>
                 );
@@ -40,7 +40,7 @@ export class StatusCom extends React.Component {
             case 9: {
                 return (
                     <div>
-                        <h3>⑨公開処刑</h3>
+                        <h3>⑨皇帝</h3>
                         <p>「{option}」が選択されました</p>
                     </div>
                 );

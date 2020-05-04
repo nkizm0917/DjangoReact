@@ -116,7 +116,7 @@ export class EventCom extends React.Component {
             case 1: {
                 return (
                     <div>
-                        <h3>①革命</h3>
+                        <h3>①少年</h3>
                         <p>Playerのカードを捨てさせる</p>
                         {this.renderConfirm()}
                     </div>
@@ -125,7 +125,7 @@ export class EventCom extends React.Component {
             case 2: {
                 return (
                     <div>
-                        <h3>②捜査</h3>
+                        <h3>②兵士</h3>
                         <p>Playerのカードを当てる</p>
                         {this.renderConfirm()}
                     </div>
@@ -134,7 +134,7 @@ export class EventCom extends React.Component {
             case 3: {
                 return (
                     <div>
-                        <h3>③透視</h3>
+                        <h3>③占師</h3>
                         <p>Playerのカードを確認</p>
                         {this.renderNext()}
                     </div>
@@ -143,7 +143,7 @@ export class EventCom extends React.Component {
             case 5: {
                 return (
                     <div>
-                        <h3>⑤疫病</h3>
+                        <h3>⑤死神</h3>
                         <p>Playerのカードを捨てさせる</p>
                         {this.renderConfirm()}
                     </div>
@@ -159,7 +159,7 @@ export class EventCom extends React.Component {
             case 9: {
                 return (
                     <div>
-                        <h3>⑨公開処刑</h3>
+                        <h3>⑨皇帝</h3>
                         <p>捨てさせるカードを選択</p>
                         {this.renderConfirm()}
                     </div>

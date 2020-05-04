@@ -189,7 +189,14 @@ export class Board extends React.Component {
             }
         }
     }
-
+    renderRemain() {
+        const remain = this.props.deck.length
+        return(
+            <div className="remain">
+                残り<em>{remain}</em>枚
+            </div>
+        );
+    }
     
 
     renderCenter() {
@@ -289,6 +296,7 @@ export class Board extends React.Component {
                             hand={hand}
                             stepNum={stepNum}
                             renderDeck={() => this.renderDeck()}
+                            renderRemain={() => this.renderRemain()}
                             drawClick={(i) => this.props.drawClick(i)}
                         />
                     </div>
@@ -339,6 +347,7 @@ export class Board extends React.Component {
                             // statusCom={(status) => this.props.statusCom(status)}
                             next={() => this.props.next()}
                             renderDeck={() => this.renderDeck()}
+                            renderRemain={() => this.renderRemain()}
                             playcardClick={(i, j) => this.props.playcardClick(i, j)}
                         />
                     </div>

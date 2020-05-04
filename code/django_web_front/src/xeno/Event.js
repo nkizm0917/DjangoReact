@@ -43,7 +43,7 @@ export class Event extends React.Component {
         if (this.props.event === 1) {
             return (
                 <div>
-                    <h3>①革命</h3>
+                    <h3>①少年</h3>
                     <p>捨てさせるカードを選択</p>
                     {/* <div>
                         {this.renderEffectOne(i, 0)}
@@ -56,7 +56,7 @@ export class Event extends React.Component {
             console.log(i)
             return (
                 <div>
-                    <h3>②捜査</h3>
+                    <h3>②兵士</h3>
                     <p>COMのカードを当てる</p>
                     <div>
                         {this.renderEffectTwo(i, "1")}
@@ -79,7 +79,7 @@ export class Event extends React.Component {
             console.log(i)
             return (
                 <div>
-                    <h3>③透視</h3>
+                    <h3>③占師</h3>
                     <p>COMのカードを確認</p>
                     <div>
                         {/* console.log(i) */}
@@ -92,7 +92,7 @@ export class Event extends React.Component {
             console.log(i)
             return (
                 <div>
-                    <h3>⑤疫病</h3>
+                    <h3>⑤死神</h3>
                     <p>捨てさせるカードを選択</p>
                     {/* <div>
                         {this.renderEffectFive(i, 0)}
@@ -111,7 +111,7 @@ export class Event extends React.Component {
         if (this.props.event === 7) {
             return (
                 <div>
-                    <h3>⑦選択</h3>
+                    <h3>⑦賢者</h3>
                     <p>手札に加えるカードをを選択</p>
                     <div>
                         {this.renderEffectSeven(i, 0)}
@@ -124,7 +124,7 @@ export class Event extends React.Component {
         if (this.props.event === 9) {
             return (
                 <div>
-                    <h3>⑨公開処刑</h3>
+                    <h3>⑨皇帝</h3>
                     <p>捨てさせるカードを選択</p>
                     {/* <div>
                         {this.renderEffectNine(i, 0)}

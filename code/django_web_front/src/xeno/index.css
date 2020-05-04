@@ -43,7 +43,7 @@ html, body, main, #root {
 } */
 
 .cover {
-  padding: 12px;
+  padding: 0 12px;
   height: 100%;
   width: 100%;
   display: flex;
@@ -63,7 +63,7 @@ html, body, main, #root {
 }
 
 .boardIn {
-  height: 510px;
+  height: 460px;
   /* display: flex; */
   align-items: center;
 }
@@ -81,21 +81,21 @@ html, body, main, #root {
   height: 98%;
   width: 95%;
   margin: auto;
-  padding: 0.5rem 1rem;
+  padding: 0.25rem 0.5rem;
   background: radial-gradient(#00e180, #008049);
   color: black;
   font-weight: bold;
 }
 .effect h5 {
-  margin: 0.25rem 0 0;
+  margin: 0.1rem 0 0;
   text-align: start;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 1.1rem;
 }
 .effect p {
-  margin: 0 0 0.4rem 1rem!important;
+  margin: 0 0 0.15rem 1rem!important;
   text-align: start;
-  font-size: 12px;
+  font-size: 11px;
   line-height: 1rem;
 }
 .effectState {
@@ -104,7 +104,7 @@ html, body, main, #root {
 }
 
 .hand {
-  height: 120px;
+  height: 110px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -119,7 +119,7 @@ html, body, main, #root {
 
 
 .field {
-  height: 60px;
+  height: 55px;
   width: 100%;
   max-width: 375px;
   display: flex;
@@ -143,16 +143,29 @@ html, body, main, #root {
 
 
 .center {
-  height: 150px;
+  height: 130px;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: bold;
+  position: relative;
 }
 
 .center h3{
   font-size: 16px;
+}
+
+.remain {
+  position: absolute;
+  bottom: 22px;
+  right: -webkit-calc(50% - 108px);
+  right: calc(50% - 108px);
+  font-size: 12px;
+}
+.remain em {
+  font-style: normal;
+  font-size: 20px;
 }
 
 .event {
@@ -166,12 +179,12 @@ html, body, main, #root {
 
 
 .board h3 {
-  margin: 0.5rem;
+  margin: 0.25rem;
 }
 
 .board p {
   /* width: fit-content; */
-  margin: 0.5rem;
+  margin: 0.25rem;
 }
 
 .board button {
