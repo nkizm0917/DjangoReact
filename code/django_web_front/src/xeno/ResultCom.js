@@ -1,5 +1,4 @@
 import React from 'react';
-// import { EffectNine, EffectTwo, EffectThree, EffectFive, EffectSix, EffectSeven } from './index';
 
 export class ResultCom extends React.Component {
 

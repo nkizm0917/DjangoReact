@@ -1,9 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './index.css';
 import { Helmet } from 'react-helmet';
+// import ReactDOM from 'react-dom';
 // import 'bulma/css/bulma.min.css';
-// import handSample from './handSample.png';
 import card1 from './img/card/card1.png';
 import card2 from './img/card/card2.png';
 import card3 from './img/card/card3.png';
@@ -17,13 +16,7 @@ import card10 from './img/card/card10.png';
 import cardR from './img/card/cardR.png';
 
 import { GameStart } from './GameStart';
-import { Last } from './Last';
 import { Board } from './Board';
-import { BoardCom } from './BoardCom';
-import { Event } from './Event';
-import { EventCom } from './EventCom';
-import { ResultCom } from './ResultCom';
-import { Winner } from './Winner';
 
 class Game extends React.Component {
     constructor(props) {
@@ -43,7 +36,6 @@ class Game extends React.Component {
             ],
             trans: null,
             hand: [["", ""], ["", ""]],
-            // taking: Array(2).fill(null),
             field: [null, null],
             step: 0,
             winner: null,
@@ -57,9 +49,6 @@ class Game extends React.Component {
             last: false,
             nextCom: false,
             statusCom: "",
-            // openCom: false,
-            // statusCom: "",
-            // xIsNext: true,
         };
     }
 
@@ -92,7 +81,6 @@ class Game extends React.Component {
                 last: false,
                 nextCom: false,
                 statusCom: "",
-                // openCom: false,
         })
     }
 
@@ -125,7 +113,6 @@ class Game extends React.Component {
             deck: this.shuffle(deck),
         });
 
-        // const hand = this.state.hand
         this.setState({
             hand: this.deal(),
             trans: this.state.deck.pop(),
@@ -138,16 +125,14 @@ class Game extends React.Component {
         hand[i] = [hand[i][0], this.state.deck.shift()]
         this.setState({
             hand: hand,
-            // step: this.state.step + 1,
         });
     }
 
-    drawWise(i) {
-        this.setState({
-            event: 7,
-            // step: this.state.step + 1,
-        })
-    }
+    // drawWise() {
+    //     this.setState({
+    //         event: 7,
+    //     })
+    // }
 
     reset(i) {
         let guard = this.state.guard
@@ -159,12 +144,6 @@ class Game extends React.Component {
     }
 
     drawClick(i) {
-        // let guard = this.state.guard
-        // guard[i] = false
-        // this.setState({
-        //     guard: guard,
-        //     player: i,
-        // })
         this.reset(i)
         this.draw(i)
     }
@@ -179,13 +158,9 @@ class Game extends React.Component {
         } else {
             field[i].push(hand[i][0])
         }
-        // hand[i] = ["", ""]
         this.setState({
             field: field,
-            // hand: hand,
         });
-        // console.log(hand)
-        // console.log(card)
     }
 
     trans(i) {
@@ -204,15 +179,9 @@ class Game extends React.Component {
     next() {
         this.setState({
             event: null,
-            // step: this.state.step + 1,
         })
     }
 
-    // confirm() {
-    //     this.setState({
-    //         statusCom: "",
-    //     })
-    // }
 
     confirm() {
         this.setState({
@@ -225,18 +194,15 @@ class Game extends React.Component {
         this.discardClick(i, j)
         const field = this.state.field
         const card = this.state.field[i][field[i].length - 1]
-        // console.log(card)
         if (card === "10") {
             this.trans(i)
         }
         this.setState({
             event: null,
-            // step: this.state.step + 1,
         })
     }
 
     effectTwoClick(i, option) {
-        // const hand = this.state.hand
         const card = this.state.hand[1-i][0]
         if (card === option) {
             if (card === "10") {
@@ -254,7 +220,6 @@ class Game extends React.Component {
         }
         this.setState ({
             event: null,
-            // step: this.state.step + 1,
         })
     }
 
@@ -267,7 +232,6 @@ class Game extends React.Component {
         }
         this.setState ({
             event: null,
-            // step: this.state.step + 1,
         })
     }
 
@@ -275,12 +239,7 @@ class Game extends React.Component {
         const hand = this.state.hand
         const cardPlayer  = hand[0][0]
         const cardCom = hand[1][0]
-        // this.setState({
-        //     status: "Player: " + cardPlayer + "  COM: " + cardCom,
-        // })
         if (Number(cardPlayer) > Number(cardCom)) {
-            // console.log(cardPlayer)
-            // console.log(cardCom)
             this.setState({
                 winner: 0
             })
@@ -303,26 +262,25 @@ class Game extends React.Component {
         let hand = this.state.hand
         let choise = deck.splice(option, 1)[0]
         let wise = this.state.wise
-        console.log(choise)
-        console.log(hand)
         hand[i] = [hand[i][0], choise]
-        console.log([hand[i][0], choise])
         wise[i] = false
         this.setState ({
             hand: hand,
             deck: this.shuffle(deck),
-            // deck: deck,
             wise: wise,
             event: null,
-            // step: this.state.step + 1,
         })
     }
 
     effectNineClick(i, j) {
         this.discardClick(i, j)
         const field = this.state.field
-        const card = this.state.field[i][field[i].length-1]
-        // console.log(card)
+        let card = ""
+        if (Array.isArray(field[i])) {
+            card = field[i][field[i].length - 1]
+        } else {
+            card = field[i]
+        }
         if (card === "10") {
             this.setState({
                 winner: 1-i,
@@ -330,18 +288,15 @@ class Game extends React.Component {
         }
         this.setState ({
             event: null,
-            // step: this.state.step + 1,
         })
     }
 
     cardEffect(i, card) {
         const remain = this.state.deck.length
-        console.log(card)
         if (card === "1" || card === "4" || card === "7") {
             switch (card) {
                 case "1": {
                     const count = this.state.countOne
-                    console.log(count)
                     if (count === 0) {
                         this.setState({
                             countOne: 1,
@@ -371,6 +326,9 @@ class Game extends React.Component {
                     this.setState({
                         wise: wise,
                     })
+                    break;
+                }
+                default: {
                     break;
                 }
             }
@@ -429,22 +387,15 @@ class Game extends React.Component {
                     }
                     break;
                 }
+                default: {
+                    break;
+                }
             }
         }
         return;
     }
 
-    // statusCom(something) {
-    //     this.setState({
-    //         statusCom: something,
-    //     })
-    // }
 
-    // playcardCom() {
-    //     const handCom = this.state.hand[1]
-    //     const j = (Number(handCom[0]) <= Number(handCom[1])) ? 0 : 1;
-    //     this.playcardClick(1, j)
-    // }
 
     playcardClick(i, j) {
         let field = this.state.field
@@ -471,11 +422,6 @@ class Game extends React.Component {
             this.setState ({
                 step: stepNow + 1,
             })
-            // if (this.state.deck.length === 0) {
-            //     this.setState({
-            //         last: true,
-            //     })
-            // }
         }
         return;
     }
@@ -500,21 +446,15 @@ class Game extends React.Component {
     render() {
         const deck = this.state.deck
         const step = this.state.step
-        const stepNum = (this.state.step - 1) % 2
         const hand = this.state.hand
         const field = this.state.field
         const trans = this.state.trans
         const event = this.state.event
-        const resultCom = this.state.resultCom
         const winner = this.state.winner
         const player = this.state.player
         const status = this.state.status
         const last = this.state.last
         const wise = this.state.wise
-        const nextCom = this.state.nextCom
-        const statusCom = this.state.statusCom
-        // const openCom =this.state.openCom
-        // const taking = this.state.taking
 
         
         if (step === 0) {
@@ -533,10 +473,7 @@ class Game extends React.Component {
                         <Board
                             deck={deck}
                             step={step}
-                            // gameStartClick={() => this.gameStartClick()}
-                            drawClick={i => this.drawClick(i)}
                             hand={hand}
-                            playcardClick={(i, j) => this.playcardClick(i, j)}
                             field={field}
                             trans={trans}
                             winner={winner}
@@ -545,7 +482,6 @@ class Game extends React.Component {
                             event={event}
                             player={player}
                             wise={wise}
-                            // openCom={openCom}
                             effectOneClick={(i, j) => this.effectOneClick(i, j)}
                             effectTwoClick={(i, option) => this.effectTwoClick(i, option)}
                             effectThreeClick={(i, j) => this.effectThreeClick(i, j)}
@@ -557,7 +493,6 @@ class Game extends React.Component {
                             drawClick={(i) => this.drawClick(i)}
                             playcardCom={() => this.playcardCom()}
                             playcardClick={(i, j) => this.playcardClick(i, j)}
-                            // statusCom={(status) => this.statusCom(status)}
                             reset={(i) => this.reset(i)}
                             confirm={() => this.confirm()}
                             resetG={() => this.resetG()}
@@ -566,131 +501,6 @@ class Game extends React.Component {
                 </div>
             );
         }
-
-        /*
-        } else if (winner != null) {
-            return (
-                <Winner
-                    winner={winner}
-                    status={status}
-                />
-            );
-        } else if (stepNum === 0) {
-            if (event) {
-                return (
-                    <div>
-                        <EventCom
-                            step={step}
-                            hand={hand}
-                            field={field}
-                            event={event}
-                            effectOneClick={(i, j) => this.effectOneClick(i, j)}
-                            effectTwoClick={(i, option) => this.effectTwoClick(i, option)}
-                            effectFiveClick={(i, j) => this.effectFiveClick(i, j)}
-                            effectNineClick={(i, j) => this.effectNineClick(i, j)}
-                            statusCom={(status) => this.statusCom(status)}
-                            next={() => this.next()}
-
-                        />
-                    </div>
-                );
-            } else if (statusCom) {
-                return (
-                    <div>
-                        <ResultCom
-                            step={step}
-                            hand={hand}
-                            field={field}
-                            event={event}
-                            statusCom={statusCom}
-                            effectOneClick={(i, j) => this.effectOneClick(i, j)}
-                            effectTwoClick={(i, option) => this.effectTwoClick(i, option)}
-                            effectFiveClick={(i, j) => this.effectFiveClick(i, j)}
-                            effectSixClick={() => this.effectSixClick()}
-                            effectNineClick={(i, j) => this.effectNineClick(i, j)}
-                            // statusCom={(status) => this.statusCom(status)}
-                            next={() => this.next()}
-                            confirm={() => this.confirm()}
-                        />
-                    </div>
-                );
-            } else if (last) {
-                return (
-                    <div>
-                        <Last
-                            effect={() => this.effectSixClick()}
-                        />
-                    </div>
-                );
-            } else {
-                return (
-                    <div>
-                        <Board
-                            step={step}
-                            gameStartClick={() => this.gameStartClick()}
-                            drawClick={i => this.drawClick(i)}
-                            hand={hand}
-                            playcardClick={(i, j) => this.playcardClick(i, j)}
-                            field={field}
-                        />
-                    </div>
-                );
-            }            
-        } else {　//stepNum === 1
-            if (event) {
-                return (
-                    <div>
-                        <Event
-                            // step={step}
-                            deck={deck}
-                            hand={hand}
-                            field={field}
-                            event={event}
-                            player={player}
-                            effectOneClick={(i, j) => this.effectOneClick(i, j)}
-                            effectTwoClick={(i, option) => this.effectTwoClick(i, option)}
-                            effectThreeClick={(i, j) => this.effectThreeClick(i, j)}
-                            effectFiveClick={(i, j) => this.effectFiveClick(i, j)}
-                            effectSixClick={() => this.effectSixClick()}
-                            effectSevenClick={(i, option) => this.effectSevenClick(i, option)}
-                            effectNineClick={(i, j) => this.effectNineClick(i, j)}
-                            next={() => this.next()}
-                        />
-                    </div>
-                );
-            } else if (last) {
-                return (
-                    <div>
-                        <Last
-                            effec
-                            t={() => this.effectSixClick()}
-                        />
-                    </div>
-                );
-            } else {
-                return (
-                    <div>
-                        <BoardCom
-                            step={step}
-                            gameStartClick={() => this.gameStartClick()}
-                            drawClick={(i) => this.drawClick(i)}
-                            hand={hand}
-                            playcardCom={() => this.playcardCom()}
-                            field={field}
-                            event={event}
-                            effectOneClick={(i, j) => this.effectOneClick(i, j)}
-                            effectTwoClick={(i, option) => this.effectTwoClick(i, option)}
-                            effectFiveClick={(i, j) => this.effectFiveClick(i, j)}
-                            effectNineClick={(i, j) => this.effectNineClick(i, j)}
-                            statusCom={(status) => this.statusCom(status)}
-                            playcardClick={(i, j) => this.playcardClick(i, j)}
-                            next={() => this.next()}
-                        />
-                    </div>
-                );
-            }
-        }
-        */
     }
 }
 
@@ -704,7 +514,6 @@ export function Draw(props) {
 }
 
 export function PlayerHand(props) {
-    // console.log(props.value)
     if (props.value) {
         return (
             <div className="handimg" onClick={props.onClick}>
@@ -789,23 +598,14 @@ export function EffectHand(props) {
 
 export function Field(props) {
     const values = props.values
-    // console.log(values)
     if (Number(values)) {
-        // const field = props.values.map(card =>{
         return(
-            <div class="field">
-                <div class="cardField">
+            <div className="field">
+                <div className="cardField">
                     <p>{values}</p>
                 </div>
             </div>
         );
-        // })
-        // return (
-        //     <div>
-        //         {/* {props.values} */}
-        //         {/* {field} */}
-        //     </div>
-        // );
     } else if (values) {
         const cards = props.values.map((card, index) => 
             <div className="cardField">
@@ -829,9 +629,6 @@ export function EffectTwo(props) {
 export function EffectThree(props) {
     return (
         <div>
-            {/* <div>
-                {props.value}
-            </div> */}
             <button onClick={props.onClick}>
                 次へ
             </button>
@@ -884,23 +681,3 @@ export function EffectNine(props) {
 // );
 
 export default Game;
-
-// function calculateWinner(squares) {
-//     const lines = [
-//         [0, 1, 2],
-//         [3, 4, 5],
-//         [6, 7, 8],
-//         [0, 3, 6],
-//         [1, 4, 7],
-//         [2, 5, 8],
-//         [0, 4, 8],
-//         [2, 4, 6],
-//     ];
-//     for (let i = 0; i < lines.length; i++) {
-//         const [a, b, c] = lines[i];
-//         if (squares[a] && squares[a] ==== squares[b] && squares[a] ==== squares[c]) {
-//             return squares[a];
-//         }
-//     }
-//     return null;
-// }

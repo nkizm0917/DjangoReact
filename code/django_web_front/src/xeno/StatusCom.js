@@ -1,6 +1,4 @@
 import React from 'react';
-// import { EffectNine, EffectTwo, EffectThree, EffectFive, EffectSix, EffectSeven } from './index';
-import { EffectSix } from './index';
 
 export class StatusCom extends React.Component {
 
@@ -50,8 +48,6 @@ export class StatusCom extends React.Component {
 
 
     render() {
-        const statusCom = this.props.statusCom
-        const optionCom = this.props.optionCom
         return (
             <div>
                 <div>

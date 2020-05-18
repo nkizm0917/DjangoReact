@@ -38,6 +38,7 @@ class Contents extends Component {
                     <div className="content">
                         <ul>
                             <li className="menu"><a href="/geinin" className="link">芸人レコメンダー</a></li>
+                            <li className="menu"><a href="/game/xeno" className="link">カードゲーム「XENO」</a></li>
                             <li className="menu">Coming Soon</li>
                             <li className="menu">Coming Soon</li>
                         </ul>

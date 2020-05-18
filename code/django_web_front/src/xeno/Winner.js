@@ -1,5 +1,4 @@
 import React from 'react';
-// import { GameStart } from './index';
 
 export class Winner extends React.Component {
     componentDidMount() {
@@ -8,26 +7,26 @@ export class Winner extends React.Component {
 
     render() {
         const winner = this.props.winner
-        // const status = this.props.status
+        let who = ""
         switch (winner) {
             case 0: {
-                var who = "勝者: Player";
+                who = "勝者: Player";
                 break;
             }
             case 1: {
-                var who = "勝者: COM";
+                who = "勝者: COM";
                 break;
             }
             case 2: {
-                var who = "引き分け";
+                who = "引き分け";
+                break;
+            }
+            default: {
                 break;
             }
         }
         return (
             <div className="winner">
-                {/* <div>
-                    {status}
-                </div> */}
                 <h3>
                     {who}
                 </h3>

@@ -1,5 +1,4 @@
 import React from 'react';
-// import { EffectSix } from './index';
 
 export class Effect extends React.Component {
     render() {
@@ -35,14 +34,3 @@ export class Effect extends React.Component {
     }
 }
 
-// function EffectLast(props) {
-//     return (
-//         <div>
-//             {/* <h5>『貴族』</h5>
-//             <p>数字の大きい方が勝利</p> */}
-//             <button onClick={props.onClick}>
-//                 対決する
-//             </button>
-//         </div>
-//     );
-// }

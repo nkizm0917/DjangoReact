@@ -1,5 +1,4 @@
 import React from 'react';
-// import { GameStart } from './index';
 
 export class Status extends React.Component {
     renderConfirm() {

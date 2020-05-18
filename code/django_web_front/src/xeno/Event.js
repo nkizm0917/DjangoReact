@@ -12,7 +12,6 @@ export class Event extends React.Component {
         return (<EffectThree onClick={() => this.props.next()} value={this.props.hand[1 - i][0]} />);
     }
     renderEffectFive(i, j) {
-        // return (<EffectFive onClick={() => this.props.effectFiveClick(1 - i, j)} value={this.props.hand[1 - i][j]} />);
         return (<EffectFive onClick={() => this.props.effectFiveClick(1 - i, j)} value={j} />);
     }
     renderEffectSix() {
@@ -38,22 +37,16 @@ export class Event extends React.Component {
     }
 
     render() {
-        // const i = this.props.player
         const i = 0
         if (this.props.event === 1) {
             return (
                 <div>
                     <h3>①少年</h3>
                     <p>捨てさせるカードを選択</p>
-                    {/* <div>
-                        {this.renderEffectOne(i, 0)}
-                        {this.renderEffectOne(i, 1)}
-                    </div> */}
                 </div>
             );
         }
         if (this.props.event === 2) {
-            console.log(i)
             return (
                 <div>
                     <h3>②兵士</h3>
@@ -76,28 +69,21 @@ export class Event extends React.Component {
             );
         }
         if (this.props.event === 3) {
-            console.log(i)
             return (
                 <div>
                     <h3>③占師</h3>
                     <p>COMのカードを確認</p>
                     <div>
-                        {/* console.log(i) */}
                         {this.renderEffectThree(i)}
                     </div>
                 </div>
             );
         }
         if (this.props.event === 5) {
-            console.log(i)
             return (
                 <div>
                     <h3>⑤死神</h3>
                     <p>捨てさせるカードを選択</p>
-                    {/* <div>
-                        {this.renderEffectFive(i, 0)}
-                        {this.renderEffectFive(i, 1)}
-                    </div> */}
                 </div>
             );
         }
@@ -126,10 +112,6 @@ export class Event extends React.Component {
                 <div>
                     <h3>⑨皇帝</h3>
                     <p>捨てさせるカードを選択</p>
-                    {/* <div>
-                        {this.renderEffectNine(i, 0)}
-                        {this.renderEffectNine(i, 1)}
-                    </div> */}
                 </div>
             );
         }

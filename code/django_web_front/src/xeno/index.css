@@ -1,6 +1,6 @@
 html, body, main, #root {
   /* font: 14px "Century Gothic", Futura, sans-serif; */
-  font: 14px serif;
+  /* font: 14px serif; */
   /* padding: 12px; */
   height: 100%;
   /* max-width: 420px; */
@@ -43,6 +43,7 @@ html, body, main, #root {
 } */
 
 .cover {
+  font: 14px serif;  
   padding: 0 12px;
   height: 100%;
   width: 100%;
